@@ -1,0 +1,32 @@
+@import "variables";
+
+body {
+  margin: 0;
+  color: #707070;
+  font-family: $font-primary;
+}
+
+.container {
+  margin: 16px 32px;
+}
+
+.boxes-container {
+  position: absolute;
+  width: 95%;
+  margin-top: 120px;
+  .box{
+    text-align: center;
+  }
+}
+
+button[mat-raised-button],
+button[mat-stroked-button]{
+  border-radius: 100px;
+  background: $white;
+  text-transform: uppercase;
+}
+button.mat-button{
+  border-radius: 100px;
+  font-size: 18px;
+}
+

@@ -1,0 +1,20 @@
+@import "~src/assets/styles/variables";
+
+.number {
+  font-size: 6em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.info {
+  font-size: 3em;
+  margin: 0;
+  font-weight: 300;
+}
+.number-box {
+  margin-top: 3em;
+  text-align: center;
+  /*&.invert-color {
+    color: $white;
+  }*/
+}

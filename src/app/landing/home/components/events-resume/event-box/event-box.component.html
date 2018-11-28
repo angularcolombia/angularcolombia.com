@@ -1,0 +1,7 @@
+<div class="event-box" [ngClass]="{'invert-color': position === 1}" >
+  <h4>{{eventInfo.title}}</h4>
+  <p>{{eventInfo.description}}</p>
+  <p>{{eventInfo.date}}</p>
+  <button mat-button [attr.color]="position !== 1 ? 'primary' : ''" [ngClass]="position !== 1 ? 'mat-primary' : 'mat-accent'">Ver más</button>
+  <!--<button mat-button color="primary">Ver más</button>-->
+</div>

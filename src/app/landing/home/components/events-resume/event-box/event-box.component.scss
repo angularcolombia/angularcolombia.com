@@ -1,0 +1,30 @@
+@import "~src/assets/styles/variables";
+
+.event-box {
+  padding: 16px 16px 50px;
+  h4 {
+    font-size: 1.8em;
+    font-weight: normal;
+    text-align: left;
+    text-transform: uppercase;
+    min-height: 80px;
+    color: $primary;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+  p {
+    text-align: left;
+    font-size: 1.8em;
+    font-weight: lighter;
+  }
+  &.invert-color {
+    background: $primary;;
+    h4,
+    p {
+      color: $white;
+    }
+  }
+  button.mat-button {
+    float: left;
+  }
+}

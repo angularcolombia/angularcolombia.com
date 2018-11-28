@@ -1,0 +1,24 @@
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,300i,400,700|Oswald|Roboto+Mono');
+@import '~@angular/material/theming';
+
+$app-primary: mat-palette($mat-pink);
+$app-secondary: mat-palette($mat-grey);
+$app-accent:  mat-palette($mat-light-blue);
+$app-warn:    mat-palette($mat-red);
+
+$primary: mat-color($app-primary);
+$secondary: mat-color($app-secondary);
+$accent: mat-color($app-accent);
+$warn: mat-color($app-warn);
+$white: #FFFFFF;
+
+// Fonts
+$font-primary: 'Josefin Sans', sans-serif;
+
+$custom-typography: mat-typography-config(
+  $font-family: 'Josefin Sans, sans-serif',
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(16px, 24px, 500)
+);
+@include mat-core($custom-typography);

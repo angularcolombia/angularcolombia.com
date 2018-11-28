@@ -1,0 +1,21 @@
+.person-img {
+  img {
+    width: 116px;
+    height: 116px;
+    border-radius: 100%;
+    overflow: hidden;
+  }
+}
+.person-info {
+  h4 {
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: lighter;
+    margin: 5px 0;
+  }
+  p{
+    text-align: center;
+    font-weight: lighter;
+    margin: 5px 0;
+  }
+}

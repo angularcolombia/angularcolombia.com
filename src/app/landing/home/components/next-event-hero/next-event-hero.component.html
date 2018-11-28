@@ -1,0 +1,38 @@
+<div
+  class="container"
+  fxLayout="column"
+  fxLayoutAlign="space-between start"
+  [ngStyle.lt-md]="{'max-height': '65em'}">
+  <div fxFlex class="event">
+    <div class="event-info"
+      [ngStyle]="{'margin-top': '7em'}"
+         [ngStyle.gt-xs]="{'text-align':'left'}">
+      <p
+        class="next-event"
+        [ngStyle.gt-sm]="{'font-size': '2.2em'}">Próximo Evento</p>
+
+      <div class="event-title">
+        <h2
+          [ngStyle.md]="{'font-size': '2.8em'}"
+          [ngStyle.gt-xs]="{'line-height':'1'}"
+          [ngStyle.gt-md]="{'font-size': '4em'}"
+          [ngStyle.gt-lg]="{'line-height':'0'}"
+        >{{nextEvent.title}}</h2>
+      </div>
+
+      <p class="another-info">{{ nextEvent.description}}</p>
+
+      <div class="place-and-date"
+           [ngStyle.gt-xs]="{'width': '30vw'}">
+        <p> {{ nextEvent.address }}</p>
+        <p>{{ nextEvent.time }}</p>
+
+        <button mat-raised-button>+ Info</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
