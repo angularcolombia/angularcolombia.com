@@ -22,7 +22,7 @@ export class LandingComponent implements OnInit, OnDestroy {
       'title': 'Inicio',
       'path': 'home'
     },
-    {
+    /*{
       'title': 'Comunidad',
       'path': 'home'
     },
@@ -41,7 +41,7 @@ export class LandingComponent implements OnInit, OnDestroy {
     {
       'title': 'Código de Conducta',
       'path': 'home'
-    }
+    }*/
   ];
 
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {

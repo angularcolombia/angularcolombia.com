@@ -10,6 +10,7 @@ import { EventsResumeComponent } from './home/components/events-resume/events-re
 import { EventBoxComponent } from './home/components/events-resume/event-box/event-box.component';
 import { HomeComponent } from './home/home.component';
 import { OrganizersComponent } from './home/components/organizers/organizers.component';
+import { EventComponent } from './event/event.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { OrganizersComponent } from './home/components/organizers/organizers.com
     EventsResumeComponent,
     EventBoxComponent,
     HomeComponent,
-    OrganizersComponent
+    OrganizersComponent,
+    EventComponent
   ]
 })
 export class LandingModule { }
