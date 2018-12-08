@@ -4,17 +4,12 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 const appRoutes: Routes = [
   {
-    path: 'landing',
+    path: '',
     loadChildren: 'src/app/landing/landing.module#LandingModule'
   },
   {
     path: 'dashboard',
     loadChildren: 'src/app/dashboard/dashboard.module#DashboardModule'
-  },
-  {
-    path: '',
-    redirectTo: '/landing/home',
-    pathMatch: 'full'
   },
   {
     path: '**',

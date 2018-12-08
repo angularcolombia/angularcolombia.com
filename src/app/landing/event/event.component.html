@@ -1,0 +1,58 @@
+<div *ngFor="let e of events | async">
+  <div *ngIf="e.is_next_event">
+    <div class="event-img-container"
+         [ngStyle]="{'background': 'url('+ e.main_img +') no-repeat center center fixed'}">
+      <div class="overlay"></div>
+      <div class="event-header"
+           [ngStyle.sm]="{'top':'30%'}">
+        <h1 class="event-title">{{ e.name }}</h1>
+        <button mat-button>
+          <mat-icon>calendar_today</mat-icon>
+          <!-- {{ e.date_start }} -->
+          11/11/11
+        </button>
+        <button mat-button>
+          <mat-icon>place</mat-icon>
+          {{ e.venue }}
+        </button>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2 class="uppercase">Información</h2>
+
+      <p class="common-text">
+        {{ e.info }}
+      </p>
+
+      <h2 class="uppercase">Recomendaciones</h2>
+
+      <p class="common-text">
+        {{ e.notes }}
+      </p>
+
+      <h2 class="uppercase">Patrocinadores</h2>
+
+      <p class="common-text">Agradecimientos especiales a: </p>
+
+      <ul class="sponsors"
+          fxLayout.xs="column" fxLayoutAlign.xs="center center"
+          fxLayout="row" fxLayoutAlign="space-around center">
+
+        <li *ngFor="let s of e?.sponsors">
+          <img [src]="s.logo" alt="">
+        </li>
+      </ul>
+
+      <h2 class="uppercase">Incripción</h2>
+
+      <a mat-flat-button href="{{e.registration_url}}">Por Aquí!</a>
+
+      <h2 class="uppercase">Ubicación</h2>
+
+      <iframe width="100%" height="300" [src]="showUrl(e.gm_url)" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+
+  </div>
+</div>
+

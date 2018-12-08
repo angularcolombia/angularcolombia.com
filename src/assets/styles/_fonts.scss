@@ -1,9 +1,13 @@
 @import "variables";
 
-.uppercase-title {
+.common-title {
   font-size: 1.8em;
   text-transform: uppercase;
   font-weight: lighter;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 .common-text {
