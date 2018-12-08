@@ -12,7 +12,7 @@ const routes: Routes = [
     component: LandingComponent,
     children: [
       {
-        path: 'home',
+        path: '',
         component: HomeComponent
       },
       {

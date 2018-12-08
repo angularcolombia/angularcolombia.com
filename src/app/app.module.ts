@@ -9,18 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
-
-export const config = {
-  production: false,
-  firebase: {
-    apiKey: '',
-    authDomain: '',
-    databaseURL: '',
-    projectId: '',
-    storageBucket: '',
-    messagingSenderId: ''
-  }
-};
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -28,7 +17,7 @@ export const config = {
     PageNotFoundComponent,
   ],
   imports: [
-    AngularFireModule.initializeApp(config.firebase),
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     BrowserModule,
