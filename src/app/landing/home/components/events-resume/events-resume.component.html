@@ -8,13 +8,19 @@
       [ngStyle.gt-xs]="{'position': 'absolute', 'margin-top': '-1em'}"
     >Eventos</h3>
 
-    <div *ngFor="let e of events | async;let i = index">
+    <app-event-box
+      class="box"
+      *ngFor="let e of events | async;let i = index"
+      [position]="i"
+      [eventInfo]="e"
+    ></app-event-box>
+    <!--<div *ngFor="let e of events | async;let i = index">
       <div class="box" *ngIf="!e.is_next_event">
         <app-event-box
           [position]="i"
           [eventInfo]="e"
           ></app-event-box>
       </div>
-    </div>
+    </div>-->
   </div>
 </div>

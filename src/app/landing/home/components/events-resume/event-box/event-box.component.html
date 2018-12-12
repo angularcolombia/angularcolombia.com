@@ -1,4 +1,6 @@
-<div class="event-box" [ngClass]="{'invert-color': position === 1}" >
+<div
+  *ngIf="!eventInfo.is_next_event"
+  class="event-box" [ngClass]="{'invert-color': position === 1}" >
   <h4>{{eventInfo.name}}</h4>
   <p>{{eventInfo.description}}</p>
   <!--<p>{{eventInfo.date_start}}</p>-->
