@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FooterComponent } from './components/cross/footer/footer.component';
 import { PersonInfoComponent } from './components/cross/person-info/person-info.component';
+import { EllipsisPipe } from './pipes/ellipsis.pipe';
 
 @NgModule({
   imports: [
@@ -29,7 +30,11 @@ import { PersonInfoComponent } from './components/cross/person-info/person-info.
     MatListModule,
     MatIconModule
   ],
-  declarations: [FooterComponent, PersonInfoComponent],
+  declarations: [
+    FooterComponent,
+    PersonInfoComponent,
+    EllipsisPipe
+  ],
   exports: [
     ReactiveFormsModule,
     FlexLayoutModule,
@@ -44,6 +49,7 @@ import { PersonInfoComponent } from './components/cross/person-info/person-info.
     MatIconModule,
     FooterComponent,
     PersonInfoComponent,
+    EllipsisPipe
   ]
 })
 export class SharedModule { }
