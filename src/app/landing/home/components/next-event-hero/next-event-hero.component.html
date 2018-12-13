@@ -2,8 +2,12 @@
   class="container"
   fxLayout="column"
   fxLayoutAlign="space-between start"
-  [ngStyle.lt-md]="{'max-height': '65em'}">
-  <div fxFlex class="event">
+  [ngStyle.lt-md]="{'max-height': '65em'}"
+  *ngFor="let e of events | async"
+>
+  <div
+    *ngIf="e.is_next_event"
+    fxFlex class="event">
     <div class="event-info"
       [ngStyle]="{'margin-top': '7em'}"
          [ngStyle.gt-xs]="{'text-align':'left'}">
@@ -17,15 +21,15 @@
           [ngStyle.gt-xs]="{'line-height':'1'}"
           [ngStyle.gt-md]="{'font-size': '4em'}"
           [ngStyle.gt-lg]="{'line-height':'0'}"
-        >{{nextEvent.title}}</h2>
+        >{{ e.name }}</h2>
       </div>
 
-      <p class="another-info">{{ nextEvent.description}}</p>
+      <p class="another-info">{{ e.description}}</p>
 
       <div class="place-and-date"
            [ngStyle.gt-xs]="{'width': '30vw'}">
-        <p> {{ nextEvent.address }}</p>
-        <p>{{ nextEvent.time }}</p>
+        <p> {{ e.venue }}</p>
+        <!--<p>{{ e.date_start }}</p>-->
 
         <button mat-raised-button [routerLink]="['event']">+ Info</button>
       </div>
