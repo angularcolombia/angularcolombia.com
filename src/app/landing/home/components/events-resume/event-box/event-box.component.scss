@@ -2,7 +2,9 @@
 
 .event-box {
   padding: 16px 16px 50px;
-  width: 28vw; // fix responsive
+  width: 100%;
+  // width: 28vw; // fix responsive
+  min-height: 15em;
   h4 {
     font-size: 1.8em;
     font-weight: normal;
