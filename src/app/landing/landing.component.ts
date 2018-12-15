@@ -1,6 +1,5 @@
 import { ChangeDetectorRef, Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
-import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-landing',
@@ -47,8 +46,7 @@ export class LandingComponent implements OnInit, OnDestroy {
 
   constructor(
     changeDetectorRef: ChangeDetectorRef,
-    media: MediaMatcher,
-    public dialog: MatDialog) {
+    media: MediaMatcher) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -63,15 +61,7 @@ export class LandingComponent implements OnInit, OnDestroy {
 
 
   openLoginModal(): void {
-    const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
-      width: '250px',
-      data: {name: this.name, animal: this.animal}
-    });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.animal = result;
-    });
   }
 
 

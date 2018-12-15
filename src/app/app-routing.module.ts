@@ -12,6 +12,10 @@ const appRoutes: Routes = [
     loadChildren: 'src/app/dashboard/dashboard.module#DashboardModule'
   },
   {
+    path: 'auth',
+    loadChildren: 'src/app/auth/auth.module#AuthModule'
+  },
+  {
     path: '**',
     component: PageNotFoundComponent
   }
