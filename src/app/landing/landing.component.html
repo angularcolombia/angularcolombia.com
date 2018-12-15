@@ -12,6 +12,11 @@
     <!-- This fills the remaining space of the current row -->
     <span class="example-fill-remaining-space"></span>
 
+    <a *ngIf="!user" mat-icon-button routerLink="auth"><mat-icon>person</mat-icon></a>
+    <div *ngIf="user">
+      <span>Hola! {{ user.displayName }}</span>
+      <button (click)="signOut()" mat-button>Cerrar Sesión</button>
+    </div>
   </mat-toolbar>
 
   <mat-sidenav-container class="example-sidenav-container">
