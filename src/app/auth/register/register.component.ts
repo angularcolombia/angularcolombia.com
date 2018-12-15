@@ -65,12 +65,12 @@ export class RegisterComponent implements OnInit {
 
     this.fireAuth.auth.createUserWithEmailAndPassword(this.email.value, this.password.value)
       .then((res) => {
-        console.log(res);
+        const user = res.user;
+        user.updateProfile({displayName: this.name.value, photoURL: null});
         this.showMessage('Registrado exitosamente');
         this.router.navigate(['']);
       })
       .catch(err => {
-        console.log(err);
         this.showMessage('Ha ocurrido un problema');
       });
 
