@@ -1,7 +1,5 @@
 <div
   class="event-box"
-  [ngStyle.gt-xs]="{'width': '42vw'}"
-  [ngStyle.gt-md]="{'width': '28vw'}"
   [ngClass]="{'invert-color': position % 2 === 0}" >
   <h4>{{eventInfo.name | ellipsis : 35}}</h4>
   <p>{{eventInfo.description | ellipsis : 60 }}</p>
