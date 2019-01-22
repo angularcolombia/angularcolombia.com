@@ -17,6 +17,7 @@ export interface EventModel {
   gm_url: string;
   is_next_event: boolean;
   main_img: string;
+  meetup_url: string;
 }
 
 interface SponsorModel {

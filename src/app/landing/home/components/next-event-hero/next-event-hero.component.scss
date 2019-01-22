@@ -1,40 +1,47 @@
 @import "~src/assets/styles/variables";
 
-.event-info {
-  text-align: center;
-  .event-title {
-    border-top: 5px solid;
-    border-bottom: 5px solid;
-    margin-top: 2em;
-    margin-bottom: 2em;
-    h2 {
-      line-height: 2;
-      font-size: 2em;
-      text-transform: uppercase;
-      font-weight: lighter;
+.event{
+  .event-info {
+    text-align: center;
+    .event-title {
+      border-top: 5px solid;
+      border-bottom: 5px solid;
+      margin-top: 2em;
+      margin-bottom: 2em;
+      h2 {
+        line-height: 2;
+        font-size: 2em;
+        text-transform: uppercase;
+        font-weight: lighter;
+      }
     }
-  }
-  .place-and-date {
+    .place-and-date {
+      p {
+        font-size: 1em;
+        font-weight: 300;
+        text-transform: uppercase;
+        width: 100%;
+      }
+    }
     p {
-      font-size: 1em;
-      font-weight: 300;
-      text-transform: uppercase;
-      width: 100%;
+      &.subtitle {
+        font-size: 1.6em;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-bottom: 0;
+      }
+      &.another-info {
+        font-size: 1.2em;
+        font-weight: 100;
+      }
     }
   }
-  p {
-    &.next-event {
-      font-size: 1.6em;
-      text-transform: uppercase;
-      font-weight: bold;
-      margin-bottom: 0;
-    }
-    &.another-info {
-      font-size: 1.2em;
-      font-weight: 100;
-    }
+  &.no-next-event {
+    margin-top: 8em;
+    margin-bottom: 8em;
   }
 }
+
 
 // Desktop
 /*

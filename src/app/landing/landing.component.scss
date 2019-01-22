@@ -1,66 +1,66 @@
 @import "~src/assets/styles/variables";
 
 .header {
-  .title {
-    position: relative;
-    h1 {
-      font-weight: 300;
-      margin-bottom: 5px;
-      color: $white;
-      position: absolute;
-      top: -18px;
-      font-size: 24px;
-    }
-    span {
-      font-style: italic;
-      color: $white;
-      position: absolute;
-      font-size: 14px;
-      font-weight: 100;
-      opacity: 0.8;
-    }
+.title {
+  position: relative;
+  h1 {
+    font-weight: 300;
+    margin-bottom: 5px;
+    color: $white;
+    position: absolute;
+    top: -18px;
+    font-size: 24px;
+  }
+  span {
+    font-style: italic;
+    color: $white;
+    position: absolute;
+    font-size: 14px;
+    font-weight: 100;
+    opacity: 0.8;
   }
 }
+}
 .mat-drawer-container {
-  background-color: $white;
-  color: #707070;
+background-color: $white;
+color: #707070;
 }
 
 
 .example-is-mobile .example-toolbar {
-  position: fixed;
-  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
-  z-index: 2;
+position: fixed;
+/* Make sure the toolbar will stay on top of the content as it scrolls past. */
+z-index: 2;
 }
 
 h1.example-app-name {
-  margin-left: 8px;
+margin-left: 8px;
 }
 
 .example-sidenav-container {
-  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
-     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
-  flex: 1;
+/* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+   causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+flex: 1;
 }
 
 .example-is-mobile .example-sidenav-container {
-  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
-     `<body>` to be our scrolling element for mobile layouts. */
-  flex: 1 0 auto;
+/* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+   `<body>` to be our scrolling element for mobile layouts. */
+flex: 1 0 auto;
 }
 
 .example-fill-remaining-space {
-  /* This fills the remaining space, by using flexbox.
-     Every toolbar row uses a flexbox row layout. */
-  flex: 1 1 auto;
+/* This fills the remaining space, by using flexbox.
+   Every toolbar row uses a flexbox row layout. */
+flex: 1 1 auto;
 }
 
 .mat-drawer-content {
-  height: 100vh;
-  overflow-x: hidden;
+height: 100vh;
+overflow-x: hidden;
 }
 
 .mat-toolbar.mat-primary{
-  position: fixed;
-  z-index: 99999;
+position: fixed;
+z-index: 99999;
 }

@@ -1,18 +1,26 @@
 <div class="header" [class.example-is-mobile]="mobileQuery.matches">
   <mat-toolbar color="primary">
+    <!--<button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>-->
+
     <div class="title">
-      <h1>{{ communityName }}</h1>
-      <span>{{ subtitle }}</span>
+      <a routerLink="">
+        <h1>{{ communityName }}</h1>
+        <span>{{ subtitle }}</span>
+      </a>
     </div>
 
     <!-- This fills the remaining space of the current row -->
     <span class="example-fill-remaining-space"></span>
 
-    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    <a *ngIf="!user" mat-icon-button routerLink="auth"><mat-icon>person</mat-icon></a>
+    <div *ngIf="user">
+      <span>Hola! {{ user.displayName }}</span>
+      <button (click)="signOut()" mat-button>Cerrar Sesión</button>
+    </div>
   </mat-toolbar>
 
   <mat-sidenav-container class="example-sidenav-container">
-    <mat-sidenav #snav [position]="'end'" [mode]="mobileQuery.matches ? 'over' : 'side'"
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
                  [fixedInViewport]="mobileQuery.matches"
                  fixedTopGap="56">
       <mat-nav-list>

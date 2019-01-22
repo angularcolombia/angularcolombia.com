@@ -6,13 +6,15 @@ import {
   MatFormFieldModule,
   MatGridListModule, MatIconModule,
   MatInputModule, MatListModule,
-  MatSidenavModule,
+  MatSidenavModule, MatSnackBarModule,
   MatToolbarModule
 } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FooterComponent } from './components/cross/footer/footer.component';
 import { PersonInfoComponent } from './components/cross/person-info/person-info.component';
+import { EllipsisPipe } from './pipes/ellipsis.pipe';
+import { SnackbarComponent } from './components/cross/snackbar/snackbar.component';
 
 @NgModule({
   imports: [
@@ -27,9 +29,18 @@ import { PersonInfoComponent } from './components/cross/person-info/person-info.
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    MatIconModule
+    MatIconModule,
+    MatSnackBarModule
   ],
-  declarations: [FooterComponent, PersonInfoComponent],
+  declarations: [
+    FooterComponent,
+    PersonInfoComponent,
+    EllipsisPipe,
+    SnackbarComponent
+  ],
+  entryComponents: [
+    SnackbarComponent
+  ],
   exports: [
     ReactiveFormsModule,
     FlexLayoutModule,
@@ -42,8 +53,11 @@ import { PersonInfoComponent } from './components/cross/person-info/person-info.
     MatSidenavModule,
     MatListModule,
     MatIconModule,
+    MatSnackBarModule,
     FooterComponent,
     PersonInfoComponent,
+    SnackbarComponent,
+    EllipsisPipe
   ]
 })
 export class SharedModule { }
