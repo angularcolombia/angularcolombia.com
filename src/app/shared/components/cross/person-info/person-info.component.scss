@@ -1,9 +1,10 @@
 .person-img {
+  width: 116px;
+  height: 116px;
+  border-radius: 100%;
+  overflow: hidden;
   img {
-    width: 116px;
-    height: 116px;
-    border-radius: 100%;
-    overflow: hidden;
+    width: 100%;
   }
 }
 .person-info {

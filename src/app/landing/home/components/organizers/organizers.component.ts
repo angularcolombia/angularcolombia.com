@@ -16,7 +16,7 @@ export class OrganizersComponent implements OnInit {
     {
       fullName: 'Mayra Rodriguez',
       profession: 'Software Developer',
-      profileImg: 'https://scontent.fbog3-1.fna.fbcdn.net/v/t1.0-9/41185024_10155861033322406_5174612959413927936_n.jpg?_nc_cat=105&oh=2389b499427c26ddb21ef0c2d6b8f0ed&oe=5C197920'
+      profileImg: 'https://secure.meetupstatic.com/photos/member/8/3/9/e/highres_274293694.jpeg'
     }
   ];
 
