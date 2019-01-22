@@ -1,0 +1,57 @@
+.event-img-container {
+  height: 40em;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.4;
+  }
+  .event-header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    h1.event-title {
+      color: #FFFFFF;
+      text-transform: uppercase;
+    }
+    button {
+      color: #FFFFFF;
+    }
+  }
+}
+
+h2 {
+  margin-top: 2em;
+}
+
+.sponsors {
+  padding-left: 0;
+  li {
+    list-style: none;
+    img {
+      width: 12em;
+      margin: 20px;
+    }
+  }
+}
+
+.map-responsive {
+  overflow:hidden;
+  padding-bottom:56.25%;
+  position:relative;
+  height:0;
+  iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+  }
+}

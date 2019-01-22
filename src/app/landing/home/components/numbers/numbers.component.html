@@ -1,0 +1,14 @@
+<div class="container">
+  <div
+      class="number-container"
+       fxLayout.xs="column" fxLayoutAlign.xs="center center"
+       fxLayout="row" fxLayoutAlign="space-evenly start">
+    <div fxFlex="33" class="number-box" *ngFor="let d of data; let position = index"
+         [ngClass.gt-sm]="{'invert-color': !position}"
+         [ngStyle.gt-sm]="{'margin-top': '0'}">
+      <p class="number"
+         [ngStyle.gt-xs]="{'font-size': '5em'}">{{d.number}}</p>
+      <p class="info">{{d.info}}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="container events-resume">
+  <div class="boxes-container"
+       fxFlex="100"
+       fxLayout.xs="column" fxLayoutAlign.xs="center center"
+       fxLayout="row" fxLayoutAlign="space-between start">
+    <h3
+      class="common-title"
+      [ngStyle.gt-xs]="{'position': 'absolute', 'margin-top': '-1em'}"
+    >Eventos</h3>
+
+    <app-event-box
+      class="box"
+      fxFlex
+      *ngFor="let e of events | async;let i = index"
+      [position]="i"
+      [eventInfo]="e"
+    ></app-event-box>
+    <!--<div *ngFor="let e of events | async;let i = index">
+      <div class="box" *ngIf="!e.is_next_event">
+        <app-event-box
+          [position]="i"
+          [eventInfo]="e"
+          ></app-event-box>
+      </div>
+    </div>-->
+  </div>
+</div>

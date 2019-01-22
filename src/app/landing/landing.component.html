@@ -1,0 +1,37 @@
+<div class="header" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-toolbar color="primary">
+    <!--<button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>-->
+
+    <div class="title">
+      <a routerLink="">
+        <h1>{{ communityName }}</h1>
+        <span>{{ subtitle }}</span>
+      </a>
+    </div>
+
+    <!-- This fills the remaining space of the current row -->
+    <span class="example-fill-remaining-space"></span>
+
+    <a *ngIf="!user" mat-icon-button routerLink="auth"><mat-icon>person</mat-icon></a>
+    <div *ngIf="user">
+      <span>Hola! {{ user.displayName }}</span>
+      <button (click)="signOut()" mat-button>Cerrar Sesión</button>
+    </div>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                 [fixedInViewport]="mobileQuery.matches"
+                 fixedTopGap="56">
+      <mat-nav-list>
+        <a mat-list-item routerLinkActive="active" [routerLink]="p.path" *ngFor="let p of pageList">{{ p.title }}</a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+

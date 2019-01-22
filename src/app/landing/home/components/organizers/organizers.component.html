@@ -1,0 +1,16 @@
+<div
+  fxFlex
+  class="organizers"
+  fxLayout.xs="column" fxLayoutAlign.xs="center center"
+  fxLayout="row" fxLayoutAlign="space-around center" [ngStyle]="{'margin': '5em auto 5em', 'min-height': '10em'}">
+  <h3
+    class="common-title"
+    [ngStyle.gt-xs]="{'position': 'absolute', 'margin-top': '-4em'}"
+  >Organizadores</h3>
+  <app-person-info
+    *ngFor="let e of organizers"
+    [fullName]="e.fullName"
+    [profession]="e.profession"
+    [profileImg]="e.profileImg"
+  ></app-person-info>
+</div>
