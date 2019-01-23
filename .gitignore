@@ -102,3 +102,6 @@ typings/
 
 # next.js build output
 .next
+
+# Firebase
+.firebase
