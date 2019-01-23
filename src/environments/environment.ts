@@ -11,6 +11,11 @@ export const environment = {
     projectId: "community-template-3a3e7",
     storageBucket: "community-template-3a3e7.appspot.com",
     messagingSenderId: "841676598050"
+  },
+  settings: {
+    community: {
+      name: "Angular Colombia"
+    }
   }
 };
 

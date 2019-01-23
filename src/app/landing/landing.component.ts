@@ -3,6 +3,7 @@ import { MediaMatcher } from '@angular/cdk/layout';
 import * as firebase from 'firebase';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AuthService } from '../core/auth.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-landing',
@@ -11,7 +12,7 @@ import { AuthService } from '../core/auth.service';
 })
 export class LandingComponent implements OnInit, OnDestroy {
 
-  communityName = 'Angular Colombia';
+  communityName = environment.settings.community.name;
   subtitle = 'Community';
 
   scrolled = false;
