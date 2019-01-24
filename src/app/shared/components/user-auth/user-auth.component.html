@@ -1,0 +1,9 @@
+<div *ngIf="!user">
+  <div class="oauth-button">
+      <img src="assets/oauth/btn_google_signin_light_normal_web.png" alt="Sign in with Google" (click)="signUpWithProvider('google')">
+  </div>
+</div>
+<div *ngIf="user">
+  <span>Hola! {{ user.displayName }}</span>
+  <button (click)="signOut()" mat-button>Cerrar Sesión</button>
+</div>

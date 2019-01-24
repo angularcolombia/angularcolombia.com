@@ -15,6 +15,7 @@ import { FooterComponent } from './components/cross/footer/footer.component';
 import { PersonInfoComponent } from './components/cross/person-info/person-info.component';
 import { EllipsisPipe } from './pipes/ellipsis.pipe';
 import { SnackbarComponent } from './components/cross/snackbar/snackbar.component';
+import { UserAuthComponent } from './components/user-auth/user-auth.component';
 
 @NgModule({
   imports: [
@@ -35,8 +36,9 @@ import { SnackbarComponent } from './components/cross/snackbar/snackbar.componen
   declarations: [
     FooterComponent,
     PersonInfoComponent,
+    SnackbarComponent,
     EllipsisPipe,
-    SnackbarComponent
+    UserAuthComponent
   ],
   entryComponents: [
     SnackbarComponent
@@ -57,7 +59,8 @@ import { SnackbarComponent } from './components/cross/snackbar/snackbar.componen
     FooterComponent,
     PersonInfoComponent,
     SnackbarComponent,
-    EllipsisPipe
+    EllipsisPipe,
+    UserAuthComponent
   ]
 })
 export class SharedModule { }
