@@ -1,9 +1,17 @@
-<div *ngIf="!user">
+<div *ngIf="user | async as userData; else showLogin">
+  <button mat-button [matMenuTriggerFor]="menu">
+    {{ userData.displayName }} <mat-icon>more_vert</mat-icon>
+  </button>
+  
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="signOut()">
+      <mat-icon>sentiment_dissatisfied</mat-icon>
+      <span>Cerrar Sesión</span>
+    </button>
+  </mat-menu>
+</div>
+<ng-template #showLogin>
   <div class="oauth-button">
-      <img src="assets/oauth/btn_google_signin_light_normal_web.png" alt="Sign in with Google" (click)="signUpWithProvider('google')">
+    <img src="assets/oauth/btn_google_signin_light_normal_web.png" alt="Sign in with Google" (click)="signUpWithProvider('google')">
   </div>
-</div>
-<div *ngIf="user">
-  <span>Hola! {{ user.displayName }}</span>
-  <button (click)="signOut()" mat-button>Cerrar Sesión</button>
-</div>
+</ng-template>

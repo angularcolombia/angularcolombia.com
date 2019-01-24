@@ -7,7 +7,8 @@ import {
   MatGridListModule, MatIconModule,
   MatInputModule, MatListModule,
   MatSidenavModule, MatSnackBarModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatMenuModule
 } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -31,7 +32,8 @@ import { UserAuthComponent } from './components/user-auth/user-auth.component';
     MatSidenavModule,
     MatListModule,
     MatIconModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatMenuModule,
   ],
   declarations: [
     FooterComponent,
@@ -56,6 +58,7 @@ import { UserAuthComponent } from './components/user-auth/user-auth.component';
     MatListModule,
     MatIconModule,
     MatSnackBarModule,
+    MatMenuModule,
     FooterComponent,
     PersonInfoComponent,
     SnackbarComponent,
