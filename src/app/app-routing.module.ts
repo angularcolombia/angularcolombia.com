@@ -12,6 +12,10 @@ const appRoutes: Routes = [
     loadChildren: 'src/app/dashboard/dashboard.module#DashboardModule'
   },
   {
+    path: 'admin',
+    loadChildren: 'src/app/admin/admin.module#AdminModule'
+  },
+  {
     path: '**',
     component: PageNotFoundComponent
   }
@@ -28,4 +32,4 @@ const appRoutes: Routes = [
     RouterModule
   ]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

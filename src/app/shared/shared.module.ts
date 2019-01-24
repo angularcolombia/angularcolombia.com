@@ -8,7 +8,8 @@ import {
   MatInputModule, MatListModule,
   MatSidenavModule, MatSnackBarModule,
   MatToolbarModule,
-  MatMenuModule
+  MatMenuModule,
+  MatTabsModule
 } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -34,6 +35,7 @@ import { UserAuthComponent } from './components/user-auth/user-auth.component';
     MatIconModule,
     MatSnackBarModule,
     MatMenuModule,
+    MatTabsModule
   ],
   declarations: [
     FooterComponent,
@@ -63,7 +65,8 @@ import { UserAuthComponent } from './components/user-auth/user-auth.component';
     PersonInfoComponent,
     SnackbarComponent,
     EllipsisPipe,
-    UserAuthComponent
+    UserAuthComponent,
+    MatTabsModule
   ]
 })
 export class SharedModule { }
