@@ -33,7 +33,6 @@ export class UserAuthComponent implements OnInit {
 
   private signUpWithGoogle() {
     this.authService.signUpWithGoogle().then(res => {
-      console.log(res)
       this.showMessage('Registrado exitosamente');
       this.router.navigate(['']);
     }).catch(err => {
