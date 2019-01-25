@@ -7,7 +7,9 @@ import {
   MatGridListModule, MatIconModule,
   MatInputModule, MatListModule,
   MatSidenavModule, MatSnackBarModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatMenuModule,
+  MatTabsModule
 } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -15,6 +17,7 @@ import { FooterComponent } from './components/cross/footer/footer.component';
 import { PersonInfoComponent } from './components/cross/person-info/person-info.component';
 import { EllipsisPipe } from './pipes/ellipsis.pipe';
 import { SnackbarComponent } from './components/cross/snackbar/snackbar.component';
+import { UserAuthComponent } from './components/user-auth/user-auth.component';
 
 @NgModule({
   imports: [
@@ -30,13 +33,16 @@ import { SnackbarComponent } from './components/cross/snackbar/snackbar.componen
     MatSidenavModule,
     MatListModule,
     MatIconModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatMenuModule,
+    MatTabsModule
   ],
   declarations: [
     FooterComponent,
     PersonInfoComponent,
+    SnackbarComponent,
     EllipsisPipe,
-    SnackbarComponent
+    UserAuthComponent
   ],
   entryComponents: [
     SnackbarComponent
@@ -54,10 +60,13 @@ import { SnackbarComponent } from './components/cross/snackbar/snackbar.componen
     MatListModule,
     MatIconModule,
     MatSnackBarModule,
+    MatMenuModule,
     FooterComponent,
     PersonInfoComponent,
     SnackbarComponent,
-    EllipsisPipe
+    EllipsisPipe,
+    UserAuthComponent,
+    MatTabsModule
   ]
 })
 export class SharedModule { }

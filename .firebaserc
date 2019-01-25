@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "angularcolombia"
+    "default": "angularcolombia",
+    "dev": "community-template-3a3e7"
   }
 }

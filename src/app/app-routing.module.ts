@@ -12,8 +12,8 @@ const appRoutes: Routes = [
     loadChildren: 'src/app/dashboard/dashboard.module#DashboardModule'
   },
   {
-    path: 'auth',
-    loadChildren: 'src/app/auth/auth.module#AuthModule'
+    path: 'admin',
+    loadChildren: 'src/app/admin/admin.module#AdminModule'
   },
   {
     path: '**',
@@ -32,4 +32,4 @@ const appRoutes: Routes = [
     RouterModule
   ]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
