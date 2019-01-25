@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
-import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/auth.service';
 import { SnackbarComponent } from '../cross/snackbar/snackbar.component';
 import { UserInfo } from 'firebase';
@@ -15,7 +14,6 @@ export class UserAuthComponent implements OnInit {
 
   constructor(
     private snackBar: MatSnackBar,
-    private router: Router,
     private authService: AuthService
   ) { }
 
@@ -33,8 +31,10 @@ export class UserAuthComponent implements OnInit {
 
   private signUpWithGoogle() {
     this.authService.signUpWithGoogle().then(res => {
-      this.showMessage('Registrado exitosamente');
-      this.router.navigate(['']);
+      this.authService.user.subscribe(e =>{
+        console.log(e.getIdTokenResult())
+      })
+      this.showMessage('Has iniciado exitosamente');
     }).catch(err => {
       this.showMessage('Ha ocurrido un problema');
     });
@@ -42,7 +42,7 @@ export class UserAuthComponent implements OnInit {
 
   private showMessage(message: string) {
     this.snackBar.openFromComponent(SnackbarComponent, {
-      duration: 500,
+      duration: 1500,
       data: message
     });
   }
