@@ -31,9 +31,6 @@ export class UserAuthComponent implements OnInit {
 
   private signUpWithGoogle() {
     this.authService.signUpWithGoogle().then(res => {
-      this.authService.user.subscribe(e =>{
-        console.log(e.getIdTokenResult())
-      })
       this.showMessage('Has iniciado exitosamente');
     }).catch(err => {
       this.showMessage('Ha ocurrido un problema');
@@ -50,6 +47,5 @@ export class UserAuthComponent implements OnInit {
   get user() {
     return this.authService.user;
   }
-
 
 }

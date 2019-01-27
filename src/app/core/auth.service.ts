@@ -23,4 +23,14 @@ export class AuthService {
   get user() {
     return this.afAuth.user;
   }
+
+  async getUserClaims() {
+    return this.afAuth.auth.currentUser.getIdTokenResult().then(idTokenResult => idTokenResult.claims);
+  }
+
+  async isAdmin() {
+    const claimsObj = await this.getUserClaims();
+    return claimsObj['admin'] === true;
+  }
+
 }
