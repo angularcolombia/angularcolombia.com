@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { SnackbarComponent } from 'src/app/shared/components/cross/snackbar/snackbar.component';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-event',
@@ -14,7 +16,7 @@ export class EventComponent implements OnInit {
     ]
   };
 
-  constructor(private afs: AngularFirestore) { }
+  constructor(private snackBar: MatSnackBar, private afs: AngularFirestore) { }
 
   ngOnInit() {
   }
@@ -22,12 +24,19 @@ export class EventComponent implements OnInit {
   onSubmit() {
     this.afs.collection('events')
       .add(this.model)
-        .then(response => {
-          console.log(response);
+        .then(() => {
+          this.showMessage('Event created successfully');
         })
-        .catch(err => {
-          console.log(err);
+        .catch(() => {
+          this.showMessage('There was an error :/');
         })
+  }
+
+  private showMessage(message: string) {
+    this.snackBar.openFromComponent(SnackbarComponent, {
+      duration: 1500,
+      data: message
+    });
   }
 
 }
