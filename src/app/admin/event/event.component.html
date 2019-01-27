@@ -1,3 +1,41 @@
-<p>
-  event works!
-</p>
+<form #newEventForm="ngForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <input matInput placeholder="Event Title" [(ngModel)]="model.title" name="title" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Event Description" [(ngModel)]="model.description" name="description" required>
+  </mat-form-field>
+  
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker_start" placeholder="Start Date" [(ngModel)]="model.date_start" name="date_start" required>
+    <mat-datepicker-toggle matSuffix [for]="picker_start"></mat-datepicker-toggle>
+    <mat-datepicker #picker_start></mat-datepicker>
+  </mat-form-field>
+  
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker_end" placeholder="End Date" [(ngModel)]="model.date_end" name="date_end" required>
+    <mat-datepicker-toggle matSuffix [for]="picker_end"></mat-datepicker-toggle>
+    <mat-datepicker #picker_end></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Meetup URL" [(ngModel)]="model.meetup_url" name="meetup_url" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Maps Location URL" [(ngModel)]="model.maps_url" name="maps_url" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Poster URL" [(ngModel)]="model.poster_url" name="poster_url" required>
+  </mat-form-field>
+  
+  <mat-form-field>
+    <input matInput placeholder="Registration URL" [(ngModel)]="model.registration_url" name="registration_url" required>
+  </mat-form-field>
+
+  <div>
+    <button type="submit" mat-button color="accent">Send</button>
+  </div>
+</form>

@@ -9,9 +9,11 @@ import {
   MatSidenavModule, MatSnackBarModule,
   MatToolbarModule,
   MatMenuModule,
-  MatTabsModule
+  MatTabsModule,
+  MatDatepickerModule,
+  MatNativeDateModule
 } from '@angular/material';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FooterComponent } from './components/cross/footer/footer.component';
 import { PersonInfoComponent } from './components/cross/person-info/person-info.component';
@@ -23,6 +25,7 @@ import { UserAuthComponent } from './components/user-auth/user-auth.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    FormsModule,
     FlexLayoutModule,
     MatButtonModule,
     MatCardModule,
@@ -35,7 +38,9 @@ import { UserAuthComponent } from './components/user-auth/user-auth.component';
     MatIconModule,
     MatSnackBarModule,
     MatMenuModule,
-    MatTabsModule
+    MatTabsModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   declarations: [
     FooterComponent,
@@ -49,6 +54,7 @@ import { UserAuthComponent } from './components/user-auth/user-auth.component';
   ],
   exports: [
     ReactiveFormsModule,
+    FormsModule,
     FlexLayoutModule,
     MatButtonModule,
     MatCardModule,
@@ -66,7 +72,9 @@ import { UserAuthComponent } from './components/user-auth/user-auth.component';
     SnackbarComponent,
     EllipsisPipe,
     UserAuthComponent,
-    MatTabsModule
+    MatTabsModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ]
 })
 export class SharedModule { }
