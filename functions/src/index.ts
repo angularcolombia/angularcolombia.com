@@ -9,12 +9,12 @@ function handleErr(err) {
 }
 
 function setRoles(uid, rolesArr) {
-    const rolesObj = rolesArr.reduce((acc, role) =>  {
-      return {...acc, [role]: true};
-    }, {});
-    admin.auth().setCustomUserClaims(uid, rolesObj).then(() => { 
-      console.log(`Custom claims ${JSON.stringify(rolesArr)} successfully applied to user ${uid}`)
-     }, handleErr);
+  const rolesObj = rolesArr.reduce((acc, role) => {
+    return { ...acc, [role]: true };
+  }, {});
+  admin.auth().setCustomUserClaims(uid, rolesObj).then(() => {
+    console.log(`Custom claims ${JSON.stringify(rolesArr)} successfully applied to user ${uid}`)
+  }, handleErr);
 }
 
 export const onUserSignup = functions.auth.user().onCreate((change, context) => {
@@ -24,7 +24,7 @@ export const onUserSignup = functions.auth.user().onCreate((change, context) => 
 
   const userMatch = whitelistedUsersCollection.where('email', '==', change.email);
   userMatch.get().then((querySnapshot: admin.firestore.QuerySnapshot) => {
-    if(querySnapshot.size) {
+    if (querySnapshot.size) {
       querySnapshot.docs.forEach(documentSnapshot => {
         const userRolesArr = documentSnapshot.data().roles;
         setRoles(change.uid, userRolesArr);
@@ -39,3 +39,32 @@ export const onUserSignup = functions.auth.user().onCreate((change, context) => 
   });
 
 });
+
+export const eventRegistration = functions.https.onCall((data, context) => {
+  const uid = context.auth.uid;
+  const eventRef = defaultFirestore.doc(`events/${data.eventId}`);
+
+  return eventRef.get().then((snapshot) => {
+    if (snapshot.exists) {
+      if (snapshot.data().registrationOpen) {
+        const userTicket = snapshot.ref.collection('attendees').doc(uid);
+        return userTicket.get().then(ticketData => {
+          let userConfirmations = 0;
+          if (ticketData.exists) {
+            userConfirmations = ticketData.data().confirmations;
+          } else {
+            return userTicket
+              .set({
+                uid: uid,
+                confirmations: userConfirmations
+              }).then(updateResult => updateResult, err => err);
+          }
+        });
+      } else {
+        return 'registration_closed';
+      }
+    }
+    return 'unknown_event';
+  }, err => err);
+});
+
